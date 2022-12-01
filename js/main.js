@@ -1,3 +1,5 @@
+let url = `http://localhost:3001/produtos`;
+
 window.onload = () => {//mapeando a serviceWorker
     "use strict";   
     if("serviceWorker" in navigator){
@@ -7,12 +9,12 @@ window.onload = () => {//mapeando a serviceWorker
 };
 
 async function bd(){
-    const response = await fetch("http://localhost:3000/produtos")
+    const response = await fetch(url)
     const data = await response.json();
     const listar = document.getElementById("listar");
     console.log(listar)
     data.map((produtos) =>{
-        listar.innerHTML += `<div>${produtos.id} ${produtos.nome} ${produtos.preco} ${produtos.descricao} ${produtos.imagem}</div>`
+        listar.innerHTML += `<div>${produtos.id} ${produtos.nome} ${produtos.preco} ${produtos.descricao}    <img width="300" height="200"class="imgem" src=${produtos.imagem}/></div>`
     })
 }
 
