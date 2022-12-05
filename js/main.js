@@ -1,20 +1,21 @@
-let url = `http://localhost:3001/produtos`;
+let url = `https://worrisome-tan-crown.cyclic.app/produtos`;
 
-window.onload = () => {//mapeando a serviceWorker
-    "use strict";   
-    if("serviceWorker" in navigator){
-        navigator.serviceWorker.register("./sw.js");
-    }
-    bd()
-};
+// window.onload = () => {//mapeando a serviceWorker
+//     "use strict";   
+//     if("serviceWorker" in navigator){
+//         navigator.serviceWorker.register("./sw.js");
+//     }
+//     bd()
+// };
 
+bd()
 async function bd(){
     const response = await fetch(url)
     const data = await response.json();
-    const listar = document.getElementById("listar");
+    var listar = document.getElementById("listar");
     console.log(listar)
     data.map((produtos) =>{
-        listar.innerHTML += `<div>${produtos.id} ${produtos.nome} ${produtos.preco} ${produtos.descricao}    <img width="300" height="200"class="imgem" src=${produtos.imagem}/></div>`
+        listar.innerHTML += `<div id>${produtos.id} ${produtos.nome} ${produtos.preco} ${produtos.descricao}    <img width="300" height="200"class="imgem" src=${produtos.imagem}/></div>`
     })
 }
 
@@ -22,12 +23,14 @@ let posicaoInicial;//variavel para capturar a posicao
 const capturarLocalizacao = document.getElementById('localizacao');
 const latitude = document.getElementById('latitude');
 const longitude = document.getElementById('longitude');
-const map = document.getElementById('mapa');
+const map = document.getElementById('map');
+
+function atualizarMapa(){
+    map.src = "http://maps.google.com/maps?q="+ posicaoInicial.coords.latitude + "," + posicaoInicial.coords.longitude +"&z=16&output=embed"
+}
 
 const sucesso = (posicao) => {//callback de sucesso para captura da posicao
     posicaoInicial = posicao;
-    latitude.innerHTML = posicaoInicial.coords.latitude;
-    longitude.innerHTML = posicaoInicial.coords.longitude;
 };
 
 const erro = (error) => {//callback de error (falha para captura de localizacao)
@@ -51,7 +54,6 @@ const erro = (error) => {//callback de error (falha para captura de localizacao)
 
 capturarLocalizacao.addEventListener('click', () => {
     navigator.geolocation.getCurrentPosition(sucesso, erro);
-
-    map.src = "http://maps.google.com/maps?q="+ posicaoInicial.coords.latitude+"," + posicaoInicial.coords.longitude +"&z=16&output=embed"
+   setInterval( atualizarMapa(), 3000)
 
 });

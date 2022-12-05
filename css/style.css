@@ -1,5 +1,10 @@
+*{
+    margin: 0;
+    font-family: sans-serif;
+}
+
 body {
-    background-color: rgb(174, 174, 174);
+    background-color: rgb(255, 255, 255);
 }
 .imgem{
     width: 100px;
