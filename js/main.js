@@ -15,7 +15,7 @@ async function bd(){
     var listar = document.getElementById("listar");
     console.log(listar)
     data.map((produtos) =>{
-        listar.innerHTML += `<div id>${produtos.id} ${produtos.nome} ${produtos.preco} ${produtos.descricao}    <img width="300" height="200"class="imgem" src=${produtos.imagem}/></div>`
+        listar.innerHTML += `<div id="card-produtos"><span>${produtos.id} </span><span class='nome'>${produtos.nome} </span><span id='preco'>${produtos.preco} reais</span><span>${produtos.descricao}</span>   <img width="300" height="200" class="imagem" src=${produtos.imagem}/></div>`
     })
 }
 

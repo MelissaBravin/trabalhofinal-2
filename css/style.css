@@ -1,61 +1,128 @@
-*{
-    margin: 0;
-    font-family: sans-serif;
+* {
+  margin: 0;
+  font-family: sans-serif;
 }
 
 body {
-    background-color: rgb(255, 255, 255);
-}
-.imgem{
-    width: 100px;
-    height: 100px;
-}
-.container {
-    box-sizing: border-box;
-    max-width: 100%;
-    width: 960px;
-    margin: 0 auto;
-    padding: 1em;
+  background-color: rgb(243, 243, 243);
 }
 
-.titulo{
-    text-align: center;
-    color: rgb(73, 71, 158);
-    font-size: 2em;
+h1, h2{
+    color: rgb(49, 49, 49);
+    font-size: 30px;
+}
+.imgem {
+  width: 100px;
+  height: 100px;
 }
 
-.conteudo{
-    background-color: rgb(169, 164, 164);
-    margin: 1.5em 0;
-    box-shadow: 3px 3px 3px rgba(153, 154, 225, 0.3);
-    text-align: center;
-}
-
-.conteudoLocalizacao{
-    font-size: 1.5em;
-}
-
-.rodape{
-    text-align: center;
-    border-radius: 5%;
-}
-
-.cabecalhoConteudo{
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    color: #333;
-}
-
-.botao{
-    background-color: rgba(69, 71, 163, 0.3);
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
+.cabecalho{
     width: 100%;
 }
+.container {
+  box-sizing: border-box;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
+
+
+}
+
+.titulo {
+  text-align: center;
+  color: white;
+  font-size: 2em;
+  background-color: rgb(73, 71, 158);
+  padding: 10px 0;
+  width: 100%;
+}
+
+.conteudo {
+  
+  margin: 1.5em 0;
+display: flex;
+flex-direction: column;
+justify-content: center;
+  text-align: center;
+}
+
+.conteudoLocalizacao {
+  font-size: 1.5em;
+}
+
+.rodape {
+  text-align: center;
+  border-radius: 5%;
+}
+
+.rodape h1 {
+  margin: 10px 0;
+}
+.cabecalhoConteudo {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.gmap_canvas {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 4px 4px 40px 0px rgba(0, 0, 0, 0.192);
+ width: 100%;
+}
+
+.mapouter{border-radius: 80px;}
+.botao {
+  background-color: rgb(69, 69, 126);
+  border: none;
+  width: 50%;
+  color: white;
+  padding: 7px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 16px;
+  border-radius: 2rem;
+}
+.mapouter{
+    display: flex;
+    align-items: center;
+    width: 80%;
+}
+#listar {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 20px;
+  column-gap: 20px;
+}
+#card-produtos {
+  width: fit-content;
+  background-color: white;
+  padding: 8px 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 4px 4px 40px 0px rgba(0, 0, 0, 0.192);
+}
+
+.nome {
+  font-size: 30px;
+}
+
+#preco{
+    color: rgb(69, 69, 126);
+    font-weight: bold;
+}
+
+.imagem{
+    width: 100px;
+    height: fit-content;
+}
